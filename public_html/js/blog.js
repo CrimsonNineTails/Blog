@@ -19,7 +19,7 @@ $(function () {
        posts: postsCollection.data
    };
    Handlebars.registerHelper('format', function (time) {
-      return moment(time).format("dddd, MMMM Do YYYY") 
+      return moment(time).format("dddd, MMMM Do YYYY") ;
    });
    
    var blogScript = $("#blogs-template").html();
