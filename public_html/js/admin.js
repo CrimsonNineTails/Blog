@@ -1,11 +1,13 @@
-
 $(function () {
    var APPLICATION_ID =  "CC3979E6-F655-FD96-FF13-1FAAD8E3DE00",
        SECRET_KEY = "76B7A6FF-ACD6-07C5-FFF8-BB69AB961B00",
        VERSION = "v1";
        
    Backendless.initApp(APPLICATION_ID,SECRET_KEY, VERSION);
-   
+   if(Backendless.UserService.isValidLogin()){
+    userLoggedIn(Backendless.LocalCache.get("current-user-id")); 
+   }
+   else{
   // var user = new Backendless.User();
    //user.email = "anders.museth@gmail.com"
    //user.password = "password";
@@ -15,11 +17,10 @@ $(function () {
    
    var loginScript = $("#login-template").html();
    var loginTemplate = Handlebars.compile(loginScript);
-   
-   
    $('.main-container').html(loginTemplate);
+   }
    
-   $(document).on('submit', '.form-signin', function(event){
+    $(document).on('submit', '.form-signin', function(event){
       event.preventDefault();
       var data = $(this).serializeArray(),
         email = data[0].value,
@@ -52,7 +53,7 @@ $(function () {
       dataStore.save(postObject);
       
       this.title.value = "";
-      this.title.value = "";
+      this.content.value = "";
       
    });
    
