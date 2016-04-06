@@ -1,3 +1,28 @@
+
+@import 'burbon';
+
+.page-content{
+    postion:relative;
+    z-index:0
+}
+.toggle
+.sidebar{
+    position: fixed;
+    width: 120px;
+    padding: 30px;
+    background: #333;
+    z-index: 0;
+}
+.slideli{
+    color: rgba(255,255,255,0.8);
+    font-size: 16px;
+    margin-bottom: 16px;
+    -webkit-font-smoothing: antialised;
+    cursor: pointer;
+}
+.slideli:hover{
+    color: rgba(255,255,255,1)
+}
 body{
     display: flex;
     min-height: 100vh;
@@ -23,6 +48,3 @@ main {
         
 }
 
-linkColor {
-    color: orange;
-}

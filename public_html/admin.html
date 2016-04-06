@@ -51,7 +51,7 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
-    
+     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
       <script type="text/javascript" src="libs/backendless.js"></script>
      <script type="text/javascript" src="js/admin.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
@@ -95,14 +95,14 @@
         <form class="col s12 form-add-blog">
             <div class="row">
                 <div class="input-field col s12">
+                    <lable for="title">Title of the Post</lable>        
                     <input id = "title" type="text" name="title">
-                    <lable for="title"></lable>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
+                    <lable for="content">Content Of Post</lable>
                     <textarea id="content" name="content" class="materialize-textarea"></textarea>
-                    <lable for="content"></lable>
                 </div>
             </div>
             <div class="row">
