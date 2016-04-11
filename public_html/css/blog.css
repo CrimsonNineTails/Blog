@@ -5,7 +5,11 @@
     postion:relative;
     z-index:0
 }
-.toggle
+.toggle{
+    text-decoration: none;
+    position: fixed 28px 0 0 200px;
+    z-index: 1;
+}
 .sidebar{
     position: fixed;
     width: 120px;

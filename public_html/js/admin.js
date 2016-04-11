@@ -5,7 +5,7 @@ $(function () {
        
    Backendless.initApp(APPLICATION_ID,SECRET_KEY, VERSION);
    
-   Backendless.UserService.logout();
+   
    
    if(Backendless.UserService.isValidLogin()){
     userLoggedIn(Backendless.LocalCache.get("current-user-id")); 
@@ -36,15 +36,28 @@ $(function () {
       var addBlogTemplate = Handlebars.compile(addBlogScript);
       
       $('.main-container').html(addBlogTemplate);
-   tinymce.init({ selector:'textarea' });
+   tinymce.init({ selector:'textarea', selector: "textarea",
+    plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "insertdatetime media table contextmenu paste"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image" });
+   
    });
    $(document).on('submit', '.form-add-blog', function(event){
       event.preventDefault();
-      
+ 
       var data = $(this).serializeArray(),
           title = data[0].value,
           content = data[1].value;
-          
+           if(content === ""){
+      Materialize.toast("This is empty please fill out before submutting", 2000);
+  }    
+  else if(title === ""){
+      Materialize.toast("This is empty please fill out before submutting", 2000);
+  }
+  else{
           
       var dataStore = Backendless.Persistence.of(Posts);
       
@@ -53,6 +66,7 @@ $(function () {
           content: content,
           authorEmail: Backendless.UserService.getCurrentUser().email
       });
+  }
       
       dataStore.save(postObject);
       
@@ -98,5 +112,10 @@ function userLoggedOut(){
 function gotError(error){
     console.log("Error message - " + error.message);
     console.log("Error code - " + error.code);
-Materialize.toast('Wrong Password Or Username!')
+Materialize.toast('Wrong Password Or Username!', 2000);
+}
+
+function required() {
+   var x = document.getElementById("myText").required;
+   document.getElementById("demo").innerHTML = x;
 }
