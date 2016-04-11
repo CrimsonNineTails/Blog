@@ -20,7 +20,7 @@ $(function () {
    
    var loginScript = $("#login-template").html();
    var loginTemplate = Handlebars.compile(loginScript);
-   $('.main-container').html(loginTemplate);
+    $('.main-container').html(loginTemplate);
    }
    
     $(document).on('submit', '.form-signin', function(event){
