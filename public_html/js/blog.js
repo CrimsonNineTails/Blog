@@ -5,18 +5,16 @@ $(function () {
        VERSION = "v1";
        
    Backendless.initApp(APPLICATION_ID,SECRET_KEY, VERSION);
-  
+   
   // var user = new Backendless.User();
    //user.email = "anders.museth@gmail.com"
    //user.password = "password";
    //Backendless.UserService.register(user);
    
    var postsCollection = Backendless.Persistence.of(Posts).find();
-   $(".button-collapse").sideNav();
-   console.log(postsCollection);
    
-   
-    var wrapper = {
+    console.log(postsCollection);
+   var wrapper = {
        posts: postsCollection.data
    };
    Handlebars.registerHelper('format', function (time) {
