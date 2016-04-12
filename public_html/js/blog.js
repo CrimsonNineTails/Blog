@@ -12,7 +12,7 @@ $(function () {
    //Backendless.UserService.register(user);
    
    var postsCollection = Backendless.Persistence.of(Posts).find();
-   $(".button-collapse").sideNav();
+  
     console.log(postsCollection);
    var wrapper = {
        posts: postsCollection.data
