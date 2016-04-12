@@ -1,4 +1,4 @@
-
+$(".button-collapse").sideNav();
 $(function () {
    var APPLICATION_ID =  "CC3979E6-F655-FD96-FF13-1FAAD8E3DE00",
        SECRET_KEY = "76B7A6FF-ACD6-07C5-FFF8-BB69AB961B00",
@@ -12,7 +12,7 @@ $(function () {
    //Backendless.UserService.register(user);
    
    var postsCollection = Backendless.Persistence.of(Posts).find();
-   
+   $(".button-collapse").sideNav();
     console.log(postsCollection);
    var wrapper = {
        posts: postsCollection.data
