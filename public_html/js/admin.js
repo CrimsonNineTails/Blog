@@ -4,7 +4,7 @@ $(function () {
        VERSION = "v1";
        
    Backendless.initApp(APPLICATION_ID,SECRET_KEY, VERSION);
-   
+   $(".button-collapse").sideNav();
    
    
    if(Backendless.UserService.isValidLogin()){
