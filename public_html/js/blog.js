@@ -14,12 +14,7 @@ $(function () {
    var postsCollection = Backendless.Persistence.of(Posts).find();
    
     console.log(postsCollection);
-   function SideMenu(){ 
-    // Initialize collapse button
-  $(".button-collapse").sideNav();
-  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-  //$('.collapsible').collapsible();
-   }
+    $(".button-collapse").sideNav();
    var wrapper = {
        posts: postsCollection.data
    };
