@@ -5,22 +5,18 @@ $(function () {
        VERSION = "v1";
        
    Backendless.initApp(APPLICATION_ID,SECRET_KEY, VERSION);
-   
+  
   // var user = new Backendless.User();
    //user.email = "anders.museth@gmail.com"
    //user.password = "password";
    //Backendless.UserService.register(user);
    
    var postsCollection = Backendless.Persistence.of(Posts).find();
+   $(".button-collapse").sideNav();
+   console.log(postsCollection);
    
-    console.log(postsCollection);
-   function SideMenu(){ 
-    // Initialize collapse button
-  $(".button-collapse").sideNav();
-  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-  //$('.collapsible').collapsible();
-   }
-   var wrapper = {
+   
+    var wrapper = {
        posts: postsCollection.data
    };
    Handlebars.registerHelper('format', function (time) {
