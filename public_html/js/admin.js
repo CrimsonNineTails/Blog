@@ -2,7 +2,7 @@ $(function () {
    var APPLICATION_ID =  "CC3979E6-F655-FD96-FF13-1FAAD8E3DE00",
        SECRET_KEY = "76B7A6FF-ACD6-07C5-FFF8-BB69AB961B00",
        VERSION = "v1";
-       
+   var postNumber;
    Backendless.initApp(APPLICATION_ID,SECRET_KEY, VERSION);
    $(".button-collapse").sideNav();
    
@@ -60,7 +60,7 @@ $(function () {
   else{
           
       var dataStore = Backendless.Persistence.of(Posts);
-      
+     
       var postObject = new Posts({
           title: title,
           content: content,
@@ -71,8 +71,7 @@ $(function () {
       dataStore.save(postObject);
       
       this.title.value = "";
-      this.content.value = "";
-      
+      this.content.value = ""; 
    });
    $(document).on('click', '.logout', function(){
        Backendless.UserService.logout(new Backendless.Async(userLoggedOut, gotError));
