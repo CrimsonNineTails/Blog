@@ -2,7 +2,7 @@ $(function () {
    var APPLICATION_ID =  "CC3979E6-F655-FD96-FF13-1FAAD8E3DE00",
        SECRET_KEY = "76B7A6FF-ACD6-07C5-FFF8-BB69AB961B00",
        VERSION = "v1";
-   var postNumber;
+
    Backendless.initApp(APPLICATION_ID,SECRET_KEY, VERSION);
    $(".button-collapse").sideNav();
    
